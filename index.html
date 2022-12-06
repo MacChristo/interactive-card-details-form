@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body id="body" class="flex">
+    <main id="main" class="flex">
+      <section class="card-sect flex">
+        <img src="images/bg-card-back.png" class="card-back" alt="card-back" />
+        <span id="cvc-number">000</span>
+        <img src="images/card-logo.svg" alt="card-logo" class="logo" />
+        <img
+          src="images/bg-card-front.png"
+          class="card-front"
+          alt="card-front"
+        />
+        <p id="card-number">0000 0000 0000 0000</p>
+        <p id="cardholder-name">Jane Appleseed</p>
+        <p id="exp-date">00/00</p>
+      </section>
+
+      <section class="form-sect flex">
+        <form novalidate id="form" class="flex">
+          <div class="label-input flex">
+            <label for="card-name">Cardholder Name</label>
+            <input
+              type="text"
+              name="card-name"
+              class="input"
+              id="card-name"
+              size="25"
+              placeholder="e.g. Jane Appleseed"
+              required
+            />
+            <span class="error-text" id="name-error"></span>
+          </div>
+          <div class="label-input flex">
+            <label for="card-number-2">Card Number</label>
+            <input
+              type="text"
+              name="card-number"
+              class="input"
+              id="card-number-2"
+              size="25"
+              placeholder="e.g. 1234 5678 9123 0000"
+              pattern="[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{4}"
+              required
+            />
+            <span class="error-text" id="number-error"
+              ></span
+            >
+          </div>
+          <div id="main-date-div" class="label-input flex">
+            <div class="date-div flex">
+              <label for="date">Exp. Date (MM/YY)</label>
+              <div class="date-inputs flex">
+                <div class="date-error flex">
+                  <input
+                    type="number"
+                    name="month"
+                    id="month"
+                    class="input"
+                    size="1"
+                    min="01"
+                    max="12"
+                    placeholder="MM"
+                    pattern="[0-9]{2}"
+                    required
+                  />
+                  <span class="error-text" id="month-error"
+                    ></span
+                  >
+                </div>
+                <div class="date-error flex">
+                  <input
+                    type="number"
+                    name="year"
+                    id="year"
+                    class="input"
+                    size="1"
+                    min="22"
+                    placeholder="YY"
+                    pattern="[0-9]{4}"
+                    required
+                  />
+                  <span class="error-text" id="year-error"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cvc-div flex">
+              <label for="cvc-2">CVC</label>
+              <input
+                type="text"
+                name="cvc-2"
+                id="cvc-2"
+                class="input"
+                size="5"
+                placeholder="e.g. 123"
+                pattern="[0-9]{3}"
+                maxlength="3"
+                required
+              />
+              <span class="error-text" id="cvc-2-error">Can't be blank</span>
+            </div>
+          </div>
+          <input type="submit" id="submit-btn" class="input" value="Confirm" />
+        </form>
+
+        <!-- Completed state start -->
+
+        <div id="thank-you-div" class="flex">
+          <img
+            src="images/icon-complete.svg"
+            alt="icon-complete"
+          />
+          <h1 class="h1">Thank you!</h1>
+          <p class="para">We've added your card details</p>
+          <input type="submit" id="thank-you-submit" class="input" value="Continue" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://macchristo.github.io/Personal-site-1/"
+          >Macaulay Omoikhoje De-great</a
+        >.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,316 @@
+:root {
+    --White--: hsl(0, 0%, 100%);
+    --Light-grayish-violet--: hsl(270, 3%, 87%);
+    --Dark-grayish-violet--: hsl(279, 6%, 55%);
+    --Very-dark-violet--: hsl(278, 68%, 11%);
+    --Purple-1--: hsl(249, 99%, 64%);
+    --Purple-2--: hsl(278, 94%, 30%);
+    --Red--: hsl(0, 100%, 66%);
+    --Font-Size--: 1.125rem;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#body {
+    font-family: 'Space Grotesk', sans-serif;;
+    font-size: var(--Font-Size--);
+    background-color: var(--White--);
+    min-height: 130vh;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+#main {
+    flex-direction: column;
+    width: 100%;
+}
+.card-sect {
+    background-image: url(images/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    padding: 1em;
+    padding-top: 12em;
+    width: 100%;
+    max-height: 170px;
+    font-weight: 100;
+}
+.card-back {
+    max-width: 255px;
+    position: relative;
+    left: 30px;
+    top: 30px;
+}
+#cvc-number {
+    position: relative;
+    bottom: 53px;
+    left: 110px;
+}
+.logo {
+    z-index: 1;
+    max-width: 60px;
+    position: relative;
+    right: 110px;
+    bottom: 37px;
+}
+.card-front {
+    max-width: 255px;
+    position: relative;
+    right: 30px;
+    bottom: 85px;
+    box-shadow: 0px 50px 30px -20px var(--Light-grayish-violet--);
+}
+#card-number {
+    margin: 0;
+    position: relative;
+    bottom: 150px;
+    right: 30px;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+}
+#cardholder-name {
+    margin: 0;
+    position: relative;
+    bottom: 135px;
+    right: 80px;
+    font-size: .795rem;
+}
+#exp-date {
+    margin: 0;
+    position: relative;
+    bottom: 154px;
+    left: 57px;
+    font-size: .95rem;
+}
+
+
+.form-sect {
+    margin-top: 5em;
+    color: var(--Very-dark-violet--);
+    width: 100%;
+}
+#form {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1.5em;
+    width: 355px;
+}
+.label-input {
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+label {
+    align-self: flex-start;
+    margin-bottom: 0.25em;
+    text-transform: uppercase;
+    font-size: .85rem;
+    letter-spacing: 1px;
+}
+.input {
+    padding: 0.75em 1.5em;
+    border-radius: 5px;
+    border: 1px solid var(--Light-grayish-violet--);
+    outline: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    width: 300px;
+}
+.input:hover {
+    cursor: pointer;
+    border-block-start-color: var(--Purple-1--);
+    border-block-end-color: var(--Purple-2--);
+    border-left-color: var(--Purple-1--);
+    border-right-color: var(--Purple-2--);
+}
+
+.error-text {
+    color: var(--Red--);
+    font-size: .75rem;
+    align-self: flex-start;
+    margin-top: 0.25em;
+    display: none;
+}
+
+#main-date-div {
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+.date-div {
+    flex-direction: column;
+}
+.date-inputs {
+    align-self: flex-start;
+}
+.date-error {
+    flex-direction: column;
+}
+#month {
+    width: 80px;
+    margin-right: 0.75em;
+    padding: 0.75em;
+}
+#year {
+    width: 105px;
+}
+.cvc-div {
+    flex-direction: column;
+}
+#cvc-2 {
+    padding: 0.75em;
+    width: 90px;
+}
+#submit-btn {
+    width: 300px;
+    background-color: var(--Very-dark-violet--);
+    color: var(--Light-grayish-violet--);
+    font-size: 1.15rem;
+}
+#thank-you-submit {
+    width: 300px;
+    background-color: var(--Very-dark-violet--);
+    color: var(--Light-grayish-violet--);
+    font-size: 1.15rem;
+}
+
+#thank-you-div {
+    display: none;
+    flex-direction: column;
+}
+.h1 {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+#thank-you-div .para {
+    margin-bottom: 2em;
+    color: var(--Dark-grayish-violet--);
+}
+
+
+@media (min-width: 800px) {
+    #body {
+        justify-content: center;
+        min-height: 100%;
+    }
+    #main {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .card-sect {
+        background-image: url(images/bg-main-desktop.png);
+        max-height: 100%;
+        background-size: cover;
+        width: 350px;
+        height: 100%;
+        min-height: 635px;
+        padding-top: 0;
+    }
+    .card-back {
+        max-width: 300px;
+        width: 100%;
+        left: 120px;
+        top: 250px;
+    }
+    #cvc-number {
+        top: 155px;
+        left: 210px;
+    }
+    .logo {
+        right: 20px;
+        bottom: 120px;
+    }
+    .card-front {
+        max-width: 300px;
+        width: 100%;
+        position: relative;
+        left: 80px;
+        bottom: 170px;
+        box-shadow: none;
+    }
+    #card-number {
+        bottom: 245px;
+        left: 80px;
+        letter-spacing: 3px;
+    }
+    #cardholder-name {
+        bottom: 230px;
+        left: 10px;
+        font-size: .795rem;
+    }
+    #exp-date {
+        bottom: 248px;
+        left: 183px;
+        font-size: .95rem;
+    }
+    .form-sect {
+        margin-top: 0;
+        width: 100%;
+        max-width: 400px;
+        padding-left: 2.5em;
+        align-self: center;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .card-sect {
+        width: 450px;
+    }
+    .card-back {
+        left: 270px;
+    }
+    #cvc-number {
+        left: 360px;
+    }
+    .card-front {
+        left: 200px;
+    }
+    .logo {
+        left: 100px;
+    }
+    #card-number {
+        left: 200px;
+    }
+    #cardholder-name {
+        left: 130px;
+    }
+    #exp-date {
+        left: 300px;
+    }
+    .form-sect {
+        padding-left: 0;
+        padding-right: 5em;
+        position: relative;
+        right: 100px;
+    }
+}
+
+
+.attribution {
+    font-size: 0.5rem;
+    text-align: center;
+    color: var(--Purple-2--);
+}
+
+.attribution a {
+    color: var(--Dark-Grayish-Red--);
+}
+
+.attribution a:hover {
+    color: hsl(108, 91%, 49%);
+}
